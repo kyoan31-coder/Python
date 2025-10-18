@@ -15,8 +15,8 @@ from src.metrics import annualized_return, annualized_vol, sharpe_ratio, sortino
 from src.strategies import BuyAndHoldStrategy, MACrossoverStrategy, VolTargetStrategy
 from src.optimizer import markowitz_max_sharpe
 
-st.set_page_config(page_title="Portfolio Strategy Simulator v2 (Modular)", page_icon="💹", layout="wide")
-st.title("💹 Portfolio Strategy Simulator — v2 (Modulaire)")
+st.set_page_config(page_title="Portfolio Strategy Simulator", page_icon="💹", layout="wide")
+st.title("💹 Portfolio Strategy Simulator")
 st.caption("Stratégies élargies + KPIs avancés + Optimisation Markowitz. **Éducatif uniquement.**")
 
 with st.sidebar:
