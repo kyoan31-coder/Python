@@ -2,8 +2,6 @@
 
 A desktop Python app (Tkinter + IB API) to analyze **implied volatility (IV) crush** around earnings for US equities. It fetches historical **stock prices, VIX**, and (if permissions allow) **option implied volatility** from Interactive Brokers, then prices an **ATM straddle** pre/post earnings via Black–Scholes, showing the effect of IV crush on option prices, P/L, and Greeks.
 
-> **Disclaimer**: For education/research only. Not investment advice. Use paper trading.
-
 ---
 
 ## Features
