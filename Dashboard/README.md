@@ -6,7 +6,7 @@ A desktop Python app (Tkinter + IB API) to analyze **implied volatility (IV) cru
 
 ---
 
-## ✨ Features
+## Features
 - **IB connection UI** (host/port, connect/disconnect)
 - **Earnings analysis inputs**: Ticker, earnings date (YYYY‑MM‑DD), and Days to Expiry
 - **Live metrics**: Stock price, VIX level, current IV
@@ -21,7 +21,7 @@ A desktop Python app (Tkinter + IB API) to analyze **implied volatility (IV) cru
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 - **GUI**: `tkinter`, `ttk`, `matplotlib` canvas
 - **Broker API**: `ibapi` (`EClient`/`EWrapper`) with background thread
 - **Data**: IB historical bars for TRADES, VIX, and OPTION_IMPLIED_VOLATILITY
@@ -29,7 +29,7 @@ A desktop Python app (Tkinter + IB API) to analyze **implied volatility (IV) cru
 
 ---
 
-## 📦 Requirements
+## Requirements
 - **Python**: 3.10+
 - **Packages**:
   ```bash
@@ -41,7 +41,7 @@ A desktop Python app (Tkinter + IB API) to analyze **implied volatility (IV) cru
 
 ---
 
-## ⚙️ IB/TWS Setup
+## IB/TWS Setup
 1. Launch **TWS** (Paper Trading recommended) or **IB Gateway**.
 2. Enable API access: *Global Configuration → API → Settings*:
    - ☑ Enable ActiveX and Socket Clients
@@ -55,7 +55,7 @@ A desktop Python app (Tkinter + IB API) to analyze **implied volatility (IV) cru
 
 ---
 
-## 🚀 Run the App
+## Run the App
 ```bash
 python app.py
 ```
@@ -65,7 +65,7 @@ python app.py
 
 ---
 
-## 🔍 What the App Does
+## What the App Does
 1. Pulls ~3 weeks of **daily stock bars** around the earnings date.
 2. Pulls **VIX** (CBOE, `IND`, exchange `CBOE`) for context.
 3. Attempts **OPTION_IMPLIED_VOLATILITY** history for the equity. If unavailable, it **estimates IV** from VIX:  
@@ -77,13 +77,13 @@ python app.py
 
 ---
 
-## 📈 Notes on Volatility Scaling
+## Notes on Volatility Scaling
 - IB’s `OPTION_IMPLIED_VOLATILITY` series may arrive as daily values. In this codebase, IV values are treated as **annualized decimals** in downstream pricing.
 - There is an intentionally conservative switch where the √252 annualization is currently **disabled** in the IV pipeline (i.e., factor set to `1`). If your IV series is truly *daily* and not annualized, you can re‑enable annualization (`× sqrt(252)`) in the `analyze_iv_crush()` block where `implied_vol` is assigned.
 
 ---
 
-## 📐 Model Assumptions
+## Model Assumptions
 - **Black–Scholes** with constant IV over the (short) horizon
 - **Risk‑free rate** fixed at **5%** (editable: `self.risk_free_rate`)
 - **ATM strike** fixed at **pre‑earnings close**
@@ -92,7 +92,7 @@ python app.py
 
 ---
 
-## 🧭 Interpreting Results
+## Interpreting Results
 - **IV Crush %**: `(pre_iv - post_iv) / pre_iv`
 - **P/L Long Straddle**: positive if total post price > pre price (gap move and/or IV up), negative when IV collapses and move is insufficient
 - **P/L Short Straddle**: the opposite sign
@@ -101,7 +101,7 @@ python app.py
 
 ---
 
-## 🧰 Troubleshooting
+## Troubleshooting
 - **“Not connected to Interactive Brokers”**: Ensure TWS/Gateway is running; correct host/port; API enabled.
 - **No data returned**:
   - Check market data **entitlements** for the symbol and for **Options/IV**.
@@ -113,28 +113,17 @@ python app.py
 
 ---
 
-## 🔧 Configuration Tips
+## Configuration Tips
 - Change the default **risk‑free rate** in `EarningsTradingDashboard.__init__`.
 - Toggle IV scaling in `analyze_iv_crush()` where `implied_vol` is computed.
 - Modify the **analysis window** (currently ±10 days fetched, ±5 days plotted) in `create_visualizations()`.
 
 ---
 
-## 🗺️ Roadmap Ideas
+## Roadmap Ideas
 - Pull **actual options chain** (strikes/expiries) and price the **true ATM** per date
 - Add **skew/smile** views and **term structure** panels
 - Compute **realized move vs implied move** and backtest pre‑earnings straddles
 - Export **CSV** of metrics & plots
 - Add **thetas/gammas** and a **PnL surface** vs move & IV change
-
----
-
-## 📄 License
-MIT (or add your preferred license).
-
----
-
-## 🙏 Acknowledgments
-- Interactive Brokers **ibapi**
-- SciPy/NumPy/Pandas/Matplotlib communities
 
