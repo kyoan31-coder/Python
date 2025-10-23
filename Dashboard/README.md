@@ -42,7 +42,7 @@ A desktop Python app (Tkinter + IB API) to analyze **implied volatility (IV) cru
 ## IB/TWS Setup
 1. Launch **TWS** (Paper Trading recommended) or **IB Gateway**.
 2. Enable API access: *Global Configuration → API → Settings*:
-   - ☑ Enable ActiveX and Socket Clients
+   - Enable ActiveX and Socket Clients
    - Trusted IPs: `127.0.0.1`
    - Read‑Only API is fine for this app
 3. Note your port:
