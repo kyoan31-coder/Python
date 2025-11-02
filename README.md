@@ -1,8 +1,6 @@
-# 🧠 Python Research Projects
+# Python Research Projects
 
 This repository gathers a series of **self-contained mini-projects** exploring advanced machine learning and generative modeling techniques — with a focus on **time-series, stochastic processes, and financial modeling**.
-
-Each notebook is standalone and fully commented (English), designed for experimentation, reproducibility, and educational clarity.
 
 ---
 
@@ -21,7 +19,7 @@ Each notebook is standalone and fully commented (English), designed for experime
 
 ---
 
-## 🧩 Topics Covered
+## Topics Covered
 
 - **Generative Modeling:** Flow Matching, Diffusion, RealNVP  
 - **Probabilistic Forecasting:** Gaussian likelihoods, NLL, calibration  
@@ -31,10 +29,4 @@ Each notebook is standalone and fully commented (English), designed for experime
 
 ---
 
-## ⚙️ Setup
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/<your-username>/Python.git
-cd Python
 
