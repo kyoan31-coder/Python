@@ -211,7 +211,7 @@ if run:
 
 st.divider()
 st.markdown("""
-**Guide rapide (v2 modulaire)**  
+**Guide rapide (v2)**  
 - Fichiers séparés : `src/` (données, stratégies, métriques, optimisateur) + `app.py` (lanceur).  
 - Onglets: Résultats / Analyse / Optimisation.  
 - KPIs: Sortino, VaR(95%), β/α vs benchmark.  
