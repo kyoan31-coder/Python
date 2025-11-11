@@ -1,5 +1,5 @@
 
-# Portfolio Strategy Simulator — v2 (Modulaire)
+# Portfolio Strategy Simulator — v2
 
 WebApp Streamlit pour simuler des stratégies de portefeuille et afficher des KPIs avancés.
 
