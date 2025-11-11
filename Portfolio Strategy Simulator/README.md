@@ -6,7 +6,7 @@ WebApp Streamlit pour simuler des stratégies de portefeuille et afficher des KP
 ## Structure
 
 ```
-portfolio_simulator_v2_modular/
+portfolio_simulator_v2/
 ├─ app.py                # Lanceur Streamlit
 ├─ src/
 │  ├─ __init__.py
