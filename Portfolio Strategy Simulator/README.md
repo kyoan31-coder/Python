@@ -36,6 +36,4 @@ portfolio_simulator_v2_modular/
 - **Stratégies** : Buy&Hold, moving-average crossover, volatility targeting (equal-weight).
 - **KPIs** : CAGR, volatilité annualisée, Sharpe, Sortino, max drawdown, VaR 95%, beta/alpha vs benchmark.
 - **Optimisation** : Markowitz max Sharpe (fallback random si SciPy absent).
-- **Export** : CSV Equity & Returns, sauvegarde / chargement de configurations JSON.
-
-> Usage éducatif uniquement. Aucune garantie de performance.
+- **Export** : CSV Equity & Returns, sauvegarde / chargement de configurations JSON
